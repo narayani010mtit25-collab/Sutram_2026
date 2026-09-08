@@ -9804,7 +9804,7 @@ html[data-theme="light"], [data-theme="light"] body {
   .topbar-right { width: 42px; min-width: 42px; display: flex; visibility: visible !important; opacity: 1 !important; }
   .topbar-partner-logos { width: 42px; justify-content: center; visibility: visible !important; }
   .topbar .partner-logo.isea-logo { display: block !important; visibility: visible !important; opacity: 1 !important; width: 38px; max-width: 38px; height: 27px; }
-  .topbar { padding: 4px 10px 4px 56px; }
+  .topbar { padding: 4px 10px 4px 60px; }
 }
 
 @media (max-width: 400px) {
@@ -9823,7 +9823,7 @@ html[data-theme="light"], [data-theme="light"] body {
     width: clamp(225px, 72vw, 320px);
     max-height: 64px;
   }
-  .topbar { padding: 3px 8px 3px 48px; }
+  .topbar { padding: 3px 8px 3px 52px; }
 }
 
 @media (max-width: 620px) {
@@ -9841,9 +9841,9 @@ html[data-theme="light"], [data-theme="light"] body {
   }
 
   .topbar .igdtuw-emblem {
-    width: 40px;
-    height: 40px;
-    flex-basis: 40px;
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
     transform: none;
   }
 
@@ -13252,7 +13252,7 @@ body.nav-locked { overflow: hidden; }
 
 /* --- Footer: stacks + sitemap for orphan pages --- */
 .footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: clamp(20px, 4vw, 44px); }
-.footer-sitemap-wrap { display: flex; justify-content: center; }
+.footer-sitemap-wrap { display: none; }
 .footer-sitemap { display: flex; flex-wrap: wrap; gap: 8px 18px; list-style: none; padding: 0; margin: 12px auto 0; justify-content: center; text-align: center; max-width: 960px; }
 .footer-sitemap a { font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
 .footer-bottom-bar { display: flex; flex-wrap: wrap; gap: 6px 20px; justify-content: space-between; }
@@ -13285,6 +13285,18 @@ input, select, textarea { font-size: max(16px, 1em); }
   .topbar-partner-logos { max-width: 34vw; }
 }
 @media (max-width: 640px) {
+  .topbar-left {
+    display: flex;
+    position: absolute;
+    left: 52px;
+    top: 50%;
+    width: 32px;
+    height: 36px;
+    transform: translateY(-50%);
+    z-index: 3;
+  }
+  .topbar-igdtuw-link { width: 32px; height: 36px; }
+  .topbar .igdtuw-emblem { width: 30px; height: 30px; flex-basis: 30px; }
   .igdtuw-wordmark { display: none; }
   .topbar { grid-template-columns: auto 1fr auto; padding-right: 60px; }
   .topbar-partner-logos { max-width: 40vw; }
@@ -13297,6 +13309,36 @@ input, select, textarea { font-size: max(16px, 1em); }
 
 .inline-link { color: #0077b6; font-weight: 700; }
 .subpage-section-flush { padding-bottom: 0; }
+
+@media (max-width: 640px) {
+  .topbar {
+    grid-template-columns: minmax(0, 1fr) 76px 44px;
+    column-gap: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .topbar-left {
+    left: 46px;
+    width: 38px;
+  }
+  .topbar-igdtuw-link { width: 38px; }
+  .topbar .igdtuw-emblem {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+  }
+  .topbar-center-logo {
+    width: 76px;
+    height: 44px;
+  }
+  .topbar-right,
+  .topbar-partner-logos { width: 44px; }
+  .topbar-partner-logos .partner-logo.isea-logo {
+    width: 36px;
+    max-width: 36px;
+    height: 36px;
+  }
+}
 
 /* --- Reduced motion: stop marquee, pulses, spins, canvas --- */
 @media (prefers-reduced-motion: reduce) {
