@@ -13350,9 +13350,11 @@ input, select, textarea { font-size: max(16px, 1em); }
 
 /* --- Reduced motion: stop marquee, pulses, spins, canvas --- */
 @media (prefers-reduced-motion: reduce) {
-  .marquee-css-track { animation: none; padding-left: 0; }
-  .marquee-css { white-space: normal; }
   .cyber-3d-canvas, #journeyCanvas, #timelineCanvas, #faqParticles { display: none; }
-  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  *:not(.marquee-css-track), *:not(.marquee-css-track)::before, *:not(.marquee-css-track)::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
   html { scroll-behavior: auto; }
 }
